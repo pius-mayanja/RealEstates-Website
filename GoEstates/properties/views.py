@@ -15,7 +15,10 @@ def properties(request):
 def details(request, pk):
     property = get_object_or_404(Property, pk=pk)
     images = PropertyImages.objects.filter(property=property)
-    video = Videos.objects.filter(property=property)
+    try:
+        video = Videos.objects.get(property=property)
+    except Videos.DoesNotExist:
+        video = None
     related_properties = Property.objects.filter(category=property.category).exclude(pk=pk)
     return render(request, 'property/details.html',{'property': property,
                                                     'video':video,
