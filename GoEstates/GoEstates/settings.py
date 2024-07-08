@@ -38,8 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    "crispy_bootstrap4",
-    'crispy_forms',
     'properties.apps.PropertiesConfig',
     # 'chart.apps.ChartConfig',
     'users.apps.UsersConfig',
@@ -147,4 +145,3 @@ STATICFILES_DIR = [
 ]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-CRISPY_TEMPLATE_PACK = "bootstrap4"
