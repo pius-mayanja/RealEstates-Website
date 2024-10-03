@@ -24,7 +24,6 @@ class BuyerSignUpView(CreateView):
 
     def form_valid(self, form):
         user = form.save()
-        login(self.request, user)
         return redirect('users:login')
 
 class BrokerSignUpView(CreateView):
@@ -38,7 +37,6 @@ class BrokerSignUpView(CreateView):
 
     def form_valid(self, form):
         user = form.save()
-        login(self.request, user)
         return redirect('users:login')
 
 def Logout_view(request):

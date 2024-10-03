@@ -52,6 +52,15 @@
                   <div class="form-group">
                     <a href="#">I have an account</a>
                   </div>
+                  {% if form.errors or form.non_field_errors %}
+                  <div class="mb-3 p-3 text-danger rounded-xl">
+                      {% for field in form %}
+                      {{ field.errors }}
+                      {% endfor %}
+
+                      {{ form.non_field_errors }}
+                  </div>
+                  {% endif %}
                   <div class="form-group form-button">
                       <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
                   </div>
